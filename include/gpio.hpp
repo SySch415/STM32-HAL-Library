@@ -1,3 +1,4 @@
+#pragma once
 #include "../regs/gpio_regs.hpp"
 #include <cstdint>
 

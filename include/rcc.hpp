@@ -1,3 +1,4 @@
+#pragma once
 #include "../regs/rcc_regs.hpp"
 
 namespace hal {
