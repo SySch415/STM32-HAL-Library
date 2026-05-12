@@ -16,8 +16,7 @@ struct Tim_Regs {
   volatile uint32_t SR;
   volatile uint32_t EGR;
   volatile uint32_t CCMR1;
-  volatile uint32_t CCMR2_OUT;
-  volatile uint32_t CCMR2_IN;
+  volatile uint32_t CCMR2;
   volatile uint32_t CCER;
   volatile uint32_t CNT;
   volatile uint32_t PSC;
