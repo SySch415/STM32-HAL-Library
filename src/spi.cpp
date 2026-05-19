@@ -15,11 +15,10 @@ hal::SPI::SPI(ID spi_id, PSr prescaler) {
     };
   }
 
-  spi_->CR1 |= (1 << 2);                               // master selction
-  spi_->CR1 |= (static_cast<uint8_t>(prescaler) << 3); // baud rate ctrl
-  spi_->CR1 |= (1 << 6);                               // spi enable
-  spi_->CR1 |= (1 << 8); // SSI internal slave select
-  spi_->CR1 |= (1 << 9); // SSM software slave management
+  //            ssm        ssi        spi enable          baud rate cotrl mstr
+  spi_->CR1 |= (1 << 9) | (1 << 8) | (1 << 6) |
+               (static_cast<uint8_t>(prescaler) << 3) |
+               (1 << 2); // master selction
 }
 
 uint8_t hal::SPI::transfer_data(uint8_t transfer_data) {
