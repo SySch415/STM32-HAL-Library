@@ -4,8 +4,8 @@
 namespace hal::regs {
 
 constexpr uint32_t TIM2_BASE_ADDR = 0x40000000;
-constexpr uint32_t TIM3_BASE_ADDR = 0x40004000;
-constexpr uint32_t TIM4_BASE_ADDR = 0x40008000;
+constexpr uint32_t TIM3_BASE_ADDR = 0x40000400;
+constexpr uint32_t TIM4_BASE_ADDR = 0x40000800;
 constexpr uint32_t TIM5_BASE_ADDR = 0x4000C000;
 
 struct Tim_Regs {
