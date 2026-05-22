@@ -1,7 +1,7 @@
 #pragma once
 #include "../regs/tim_regs.hpp"
 #include <cstdint>
-#include <iostream>
+#include <type_traits>
 
 namespace hal {
 
@@ -67,7 +67,22 @@ public:
     _regs->CCER |= (1 << ((channel_val - 1) * 4));
   }
 
-  void set_PWM_mode_1() { _regs->CCMR1 |= (6 << 4) | (1 << 3); }
+  void set_PWM_mode_1(uint8_t channel) {
+
+    switch (channel) {
+    case 1:
+      _regs->CCMR1 |= (6 << 4) | (1 << 3);
+      break;
+    case 2:
+      _regs->CCMR1 |= (6 << 12) | (1 << 11);
+      break;
+    case 3:
+      _regs->CCMR2 |= (6 << 4) | (1 << 3);
+    case 4:
+      _regs->CCMR2 |= (6 << 12) | (1 << 11);
+      break;
+    }
+  }
 
 private:
   regs::Tim_Regs *_regs;
