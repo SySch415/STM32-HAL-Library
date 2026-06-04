@@ -1,7 +1,7 @@
 #include "../include/adc.hpp"
 #include <cstdint>
 
-hal::ADC::ADC() : adc_(hal::regs::ADC1) { adc_->CR1 |= (1 << 0); }
+hal::ADC::ADC() : adc_(hal::regs::ADC1) { adc_->CR2 |= (1 << 0); }
 
 uint16_t hal::ADC::read(hal::ADC::CH ch) {
   uint8_t channel{static_cast<uint8_t>(ch)};
