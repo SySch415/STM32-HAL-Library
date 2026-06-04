@@ -80,6 +80,8 @@ void hal::RCC::clock_enable(const Periph &p) {
   case hal::RCC::Periph::PWREN:
     rcc_->APB1ENR |= (1 << 28);
     break;
+  case hal::RCC::Periph::ADC1:
+    rcc_->APB2ENR |= (1 << 8);
 
   default:
     while (1) {

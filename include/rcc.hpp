@@ -30,7 +30,8 @@ public:
     I2C1,
     I2C2,
     I2C3,
-    PWREN
+    PWREN,
+    ADC1
   };
   RCC();
 
